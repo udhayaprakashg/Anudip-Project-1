@@ -32,7 +32,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Customer findCustomerById(Long id) {
+	public Customer findCustomerById(Long id) throws CustomerNotFoundException {
 	     return customerRepository.findById(id).get();
 	}
 
@@ -48,7 +48,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public void deleteCustomerById(Long id) {
+	public void deleteCustomerById(Long id) throws CustomerNotFoundException{
 		customerRepository.deleteById(id);
 	}
 
